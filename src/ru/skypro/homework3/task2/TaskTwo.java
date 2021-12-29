@@ -4,14 +4,10 @@ public class TaskTwo {
 
     public static void main(String[] args) {
 
-        int firstFriday = 6;
-        int counter = 7;
+        int firstFriday = 3;
 
-        for (; firstFriday <= 31; firstFriday++, counter++) {
-            if (counter == 7) {
-                System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет.");
-                counter = 0;
-            }
+        for (int i = firstFriday; i <= 31; i += 7) {
+            System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет.");
         }
     }
 }

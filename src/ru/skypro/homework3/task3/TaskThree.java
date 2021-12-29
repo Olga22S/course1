@@ -4,14 +4,10 @@ public class TaskThree {
 
     public static void main(String[] args) {
 
-        int year = 0;
-
-        while (year < 1821) {
-            year += 79;
-        }
-        while (year <= 2121) {
-            System.out.println(year);
-            year += 79;
+        for (int i = 0; i <= 2121; i += 79) {
+            if (i > 1821) {
+                System.out.println(i);
+            }
         }
     }
 }
