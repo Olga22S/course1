@@ -64,10 +64,8 @@ public class Main {
         int temp = 0;
         while (i != j) {
             temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-            i++;
-            j--;
+            array[i++] = array[j];
+            array[j--] = temp;
         }
     }
 }
