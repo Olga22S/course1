@@ -10,7 +10,7 @@ public class Library {
         this.books = new Book[size];
     }
 
-    public void putBookInArray(Book book) {
+    public void addBook(Book book) {
         for (int i = 0; i < books.length; i++) {
             if (isNull(books[i])) {
                 books[i] = book;
@@ -52,5 +52,16 @@ public class Library {
         System.out.print(author.getFirstName() + " " + author.getLastName() + ": ");
         System.out.print(book.getName() + ": ");
         System.out.println(book.getYear());
+    }
+
+    @Override
+    public String toString() {
+        String str = "Library:\n";
+        for (int i = 0; i < books.length; i++) {
+            if (!isNull(books[i])) {
+                str += books[i] + "\n";
+            }
+        }
+        return str;
     }
 }
