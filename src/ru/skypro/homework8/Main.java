@@ -4,18 +4,36 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Author authorOne = new Author("Leo", "Tolstoy");
-        Author authorTwo = new Author("Anton", "Chekhov");
-        Book bookOne = new Book("War and Peace", authorOne, 1888);
-        Book bookTwo = new Book("Lady with dog", authorTwo, 1777);
-        Book bookThree = new Book("Anna Karenina", authorOne, 1878);
-        Library library = new Library(5);
+        System.out.println("Authors:");
+        Author stephenKing = new Author("Stephen", "King");
+        Author stephenKing2 = new Author("Stephen", "King");
+        Author levTolstoy = new Author("Lev", "Tolstoy");
+        System.out.println("Author copies equal: " + stephenKing.equals(stephenKing2));
+        System.out.println("Author copies equal by hashCode: " + (stephenKing.hashCode() == stephenKing2.hashCode()));
+        System.out.println("Authors equal: " + stephenKing.equals(levTolstoy));
+        System.out.println("Authors equal by hashCode: " + (stephenKing.hashCode() == levTolstoy.hashCode()));
 
-        library.putBookInArray(bookOne);
-        library.putBookInArray(bookTwo);
-        library.putBookInArray(bookThree);
-        library.printBooksFromArray();
-        library.changeBookYear("War and Peace", 2022);
-        library.printBookInfoByName("War and Peace");
+        System.out.println(stephenKing);
+        System.out.println(levTolstoy);
+
+        System.out.println("==============================");
+
+        System.out.println("Books:");
+        Book theStand = new Book("The Stand", stephenKing, 1976);
+        Book theStand2 = new Book("The Stand", stephenKing, 1976);
+        Book warAndPeace = new Book("War and Peace", levTolstoy, 1869);
+        System.out.println("Book copies equal: " + theStand.equals(theStand2));
+        System.out.println("Book copies equal by hashCode: " + (theStand.hashCode() == theStand2.hashCode()));
+        System.out.println("Books equal: " + theStand.equals(warAndPeace));
+        System.out.println("Books equal by hashCode: " + (theStand.hashCode() == warAndPeace.hashCode()));
+        System.out.println(theStand);
+        System.out.println(warAndPeace);
+
+        System.out.println("==============================");
+
+        Library library = new Library(2);
+        library.addBook(theStand);
+        library.addBook(warAndPeace);
+        System.out.println(library);
     }
 }
